@@ -1,6 +1,6 @@
 {
   "name": "debounce-zen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "module": "src/index.js",
   "browser": "src/index.js",

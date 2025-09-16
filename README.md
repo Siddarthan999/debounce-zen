@@ -1,4 +1,4 @@
-# 🧠 debounce-zen (smartDebounce)
+# debounce-zen (smartDebounce)
 
 *An adaptive debounce & throttle utility — smarter than `lodash.debounce`.*
 
@@ -94,40 +94,14 @@ After wrapping a function with `debounce-zen`, the returned function includes th
 
 Type into the input — see the difference between `lodash.debounce` and `debounce-zen`:
 
+👉 [Try it live on CodeSandbox](https://codesandbox.io/p/sandbox/fxlwxl)
+
 ![debounce-zen demo](./demo/debounce-zen.gif)
-```
-<input type="text" id="search" placeholder="Type something..." />
 
-<script type="module">
-  import { smartDebounce } from "debounce-zen";
-  import debounce from "https://cdn.jsdelivr.net/npm/lodash-es/debounce.js";
-
-  const input = document.getElementById("search");
-
-  const smartHandler = smartDebounce((q) => {
-    console.log("🔵 smartDebounce:", q);
-  }, { mode: "adaptive", min: 200, max: 1500 });
-
-  const lodashHandler = debounce((q) => {
-    console.log("⚪ lodash debounce:", q);
-  }, 300);
-
-  input.addEventListener("input", (e) => {
-    smartHandler(e.target.value);
-    lodashHandler(e.target.value);
-  });
-</script>
-```
-👉 Run demo/index.html locally or on CodeSandbox.
-
-## ✅ Tests
-```
-npm test
-```
 
 ## MIT License
 ```
-Copyright (c) 2025 Siddarthan Natarajan
+Copyright (c) 2025 Siddarthan
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
