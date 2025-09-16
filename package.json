@@ -1,0 +1,21 @@
+{
+  "name": "debounce-zen",
+  "version": "1.0.0",
+  "main": "index.js",
+  "module": "src/index.js",
+  "browser": "src/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.1.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

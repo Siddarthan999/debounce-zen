@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>smart-debounce demo</title>
+</head>
+<body>
+  <h1>smart-debounce vs lodash debounce</h1>
+  <input type="text" id="search" placeholder="Type something..." />
+
+  <script type="module">
+    import { smartDebounce } from "../src/index.js";
+    import debounce from "https://cdn.jsdelivr.net/npm/lodash-es/debounce.js";
+
+    const input = document.getElementById("search");
+
+    // Your smart-debounce (adaptive)
+    const smartHandler = smartDebounce((q) => {
+      console.log("🔵 smartDebounce:", q, "at", new Date().toLocaleTimeString());
+    }, { mode: "adaptive", min: 200, max: 1500 });
+
+    // Lodash fixed debounce (300ms)
+    const lodashHandler = debounce((q) => {
+      console.log("⚪ lodash debounce:", q, "at", new Date().toLocaleTimeString());
+    }, 300);
+
+    input.addEventListener("input", (e) => {
+      smartHandler(e.target.value);
+      lodashHandler(e.target.value);
+    });
+  </script>
+</body>
+</html>
